@@ -1,5 +1,5 @@
 {% set name = "hcipy" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hcipy-{{ version }}.tar.gz
-  sha256: b27ccf5c48083e88e5af7e6bd15966cba0170de7047d466f3309d7b5845eb27b
+  sha256: 27729e7af358e2815ceb81a8d9c49e55f4015da5fb6960377daa316519e40dea
 
 build:
   number: 0
@@ -18,17 +18,20 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >=3.7
     - setuptools-scm
   run:
-    - asdf
+    - asdf  # [py>37]
+    - asdf <=2.10  # [py<=37]
     - astropy
     - imageio
+    - importlib_metadata  # [py<37]
+    - importlib_resources >=1.4  # [py<39]
     - matplotlib-base >=2.0.0
     - numexpr
     - numpy
     - pillow
-    - python >=3.6
+    - python >=3.7
     - pyyaml
     - scipy
     - python-xxhash

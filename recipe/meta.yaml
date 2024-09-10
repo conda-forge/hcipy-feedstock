@@ -11,25 +11,27 @@ source:
   sha256: 2add93e84802acf4c91a2ca08e61548751c7d43b6115c67698c96796ed07c6c1
 
 build:
-  number: 0
-  noarch: python
+  number: 1
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python
+    - setuptools
     - setuptools-scm
   run:
-    - asdf <=2.10
+    - asdf <=2.10  # [py<=37]
+    - asdf  # [py>37]
     - astropy
     - imageio
-    - importlib_resources >=1.4
+    - importlib_resources >=1.4  # [py<39]
     - matplotlib-base >=2.0.0
     - numexpr
     - numpy
     - pillow
-    - python >=3.7
+    - python
     - pyyaml
     - scipy
     - python-xxhash

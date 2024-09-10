@@ -12,6 +12,7 @@ source:
 
 build:
   number: 1
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,11 +22,11 @@ requirements:
     - setuptools
     - setuptools-scm
   run:
-    - asdf <=2.10  # [py<=3.7]
-    - asdf  # [py>3.7]
+    - asdf <=2.10  # [py<=37]
+    - asdf  # [py>37]
     - astropy
     - imageio
-    - importlib_resources >=1.4  # [py<3.9]
+    - importlib_resources >=1.4  # [py<39]
     - matplotlib-base >=2.0.0
     - numexpr
     - numpy

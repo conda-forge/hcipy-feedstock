@@ -11,7 +11,7 @@ source:
   sha256: 2add93e84802acf4c91a2ca08e61548751c7d43b6115c67698c96796ed07c6c1
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -22,7 +22,7 @@ requirements:
     - setuptools-scm
   run:
     - asdf <=2.10
-    - astropy
+    - astropy-base
     - imageio
     - importlib_resources >=1.4
     - matplotlib-base >=2.0.0

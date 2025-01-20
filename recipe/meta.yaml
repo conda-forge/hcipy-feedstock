@@ -7,18 +7,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hcipy-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hcipy-{{ version }}.tar.gz
   sha256: 2add93e84802acf4c91a2ca08e61548751c7d43b6115c67698c96796ed07c6c1
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - asdf <=2.10
@@ -29,7 +29,7 @@ requirements:
     - numexpr
     - numpy
     - pillow
-    - python >=3.7
+    - python >={{ python_min }}
     - pyyaml
     - scipy
     - python-xxhash
@@ -42,6 +42,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ehpor/hcipy/

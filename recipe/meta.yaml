@@ -1,5 +1,5 @@
 {% set name = "hcipy" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hcipy-{{ version }}.tar.gz
-  sha256: 2add93e84802acf4c91a2ca08e61548751c7d43b6115c67698c96796ed07c6c1
+  sha256: fb67420308fa734a1fa258273ef0b67bd338cc66a5e918d05743331936ffe9b8
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 

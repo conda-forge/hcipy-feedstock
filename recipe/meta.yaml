@@ -11,7 +11,7 @@ source:
   sha256: fb67420308fa734a1fa258273ef0b67bd338cc66a5e918d05743331936ffe9b8
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -33,7 +33,7 @@ requirements:
     - python >={{ python_min }}
     - pyyaml
     - scipy
-    - python-xxhash
+    - python-xxhash <4.0.0
     - ffmpeg
     - tqdm
 

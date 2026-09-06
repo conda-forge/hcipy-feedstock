@@ -33,7 +33,7 @@ requirements:
     - python >={{ python_min }}
     - pyyaml
     - scipy
-    - python-xxhash <4.0.0
+    - python-xxhash
     - ffmpeg
     - tqdm
 
